@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+<script src="{% static 'assets/js/browser.min.js' %}"></script>
+<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{% block title %} {% endblock %}</title>
+		<meta name="description" content="{% block metadescription %}{% endblock %}">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<!-- <img style="margin-top:6%" src="{% static 'image/apple_doctor_3.png' %}" width="20%" /> -->
+							<br><br><br><br>
+						</div>
+					</div>
+				</header>
+			<!-- Nav -->
+				<nav id="nav" style="width:50%; margin-top:5%">
+					<ul>
+						<li class="current"><a href="/" style="font-size: 17px;">Home</a></li>
+						<li><a href="/disease" style="font-size: 17px;">질병 정보</a></li>
+						<li><a href="/pesticide"style="font-size: 17px;">가까운 농약사 찾기</a></li>
+						<li><a href="/pesticide/list" style="font-size: 17px;">농약 검색</a></li>
+					</ul>
+				</nav>
+			
+                
+            <!-- contents -->
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+    </body>
+</html>
+        

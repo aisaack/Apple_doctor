@@ -1,0 +1,84 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{% block content%}
+
+<!-- <image width =30% height=30% src ="{% static 'image/results/sample1.jpg' %}" alt="result_view"/> -->
+<!--- 해당 하는 병의 정보 탭으로 바로 이동하도록 -->
+<!-- <img src={{result_dir}} width=30% height=30%/> -->
+<div class="col-12">
+
+    <!-- Blog -->
+    <!-- <section class="box blog">
+        <h2 class="major"><span>Another Major Heading</span></h2>
+        <div>
+            <div class="row">
+                <div class="col-9 col-12-medium">
+                    <div class="content"> -->
+    <!-- Featured Post -->
+    <!-- <article class="box post">
+                            <header>
+                                <h3><a href="#">진단 결과</a></h3>
+                            </header>
+                            <img src={{resultDir}} width=30% height=30% alt="">
+                            <a href="/" class="button">Top</a>
+                        </article>
+                    </div>
+                </div> -->
+    <div class="col-3 col-12-medium">
+        <div class="sidebar">
+            <!-- Archives -->
+            
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+</div>
+<div>
+    <h1 style="text-align: center;">진단 결과</h1>
+    <img src={{resultDir}} width=30% height=30%>
+    <br><br>
+    <div>
+        <ul class="divided">
+            {% for label,score in resultZip %}
+            <article class="box post-summary">
+                <h3>{{label}}</h3>
+                <ul class="meta">
+                    <h4>{{score}}%</h4>
+                </ul>
+            </article>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>병명</th>
+                <th>확률</th>
+            </tr>
+        </thead>
+
+            <tbody>
+
+                <tr>
+                    <!--결과 받기 -->
+                    {% for label,score in resultZip %}
+                    <td>{{label}}</td>
+                    <td>{{score}}%</td>
+                    {% endfor %}                
+                </tr>
+
+            </tbody>
+
+    </table>
+
+    <br><br>
+    <a href="" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">상세정보</a>
+
+</div> -->
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block content%}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Main -->
+<section id="main">
+
+	<div class="container">
+		<div>
+			<img style="margin-left: 25%;" src="{% static 'image/apple_doctor_2.png' %}" width="50%" />
+		</div>
+		<div class="row gtr-200">
+			<div class="col-12">
+				<!-- Highlight -->
+				<!-- <section class="box highlight" > -->
+				<div class="content">
+					<!-- <h2 style="margin-top:7%; text-align: center;">사과 병해 진단</h2> -->
+					<!-- <p>A free responsive site template built on HTML5, CSS3, and some other stuff</p> -->
+					<form name="inputImage" method="post" enctype="multipart/form-data" action="/api/web/predict">
+						{% csrf_token %}
+						<label for="file">
+							<span class="button scrolly"
+								style="margin-top:0%; width:100%; font-size: 20px;text-align: center;">사과 병해
+								진단click!</span>
+							<input name="photo" type="file" id="file" style="display:none" onchange="form.submit()">
+
+						</label>
+					</form>
+
+				</div>
+				<!-- </section> -->
+			</div>
+			<br><br><br><br><br><br><br><br>
+		</div>
+		<div class="content">
+			{% if resultDir is not null %}
+			<!-- <h1 style="text-align: center;">진단 결과</h1> -->
+			<!-- <ul class="divided"> -->
+			<div>
+				<img src={{resultDir}} width=50% height=50% style="float:left;">
+			</div>
+
+			<div>
+				<table frame=void
+					style="width:50%; height:50%; margin-top:7%; background-color:transparent; float:right;">
+					<tbody>
+						<th style="font-size: 30px;">병명</th>
+						<th style="font-size: 30px;">확률</th>
+						<th style="font-size: 30px;">정보</th>
+
+						{% for label,score in resultZip %}
+
+						<tr class="meta">
+							<td style="border-right: hidden; font-size: 25px;">
+								{{label.0}}
+							</td>
+
+							<td style="border-right: hidden; font-size: 25px;">
+								{% if label.1 != ''%}
+								{{score}}
+								{% endif %}
+							</td>
+
+							<td>
+								{% if label.1 != '' %}
+								<a class="button scrolly" href="/disease/{{label.1}}">
+									바로가기
+								</a>
+								{% endif %}
+							</td>
+								
+						</tr>
+
+						{% endfor %}
+
+					</tbody>
+
+				</table>
+
+
+			</div>
+
+			{% endif %}
+
+
+
+
+
+		</div>
+		<div>
+			
+		</div>
+	</div>
+</section>
+<br><br><br>
+
+
+{% endblock %}

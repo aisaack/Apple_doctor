@@ -1,0 +1,52 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block metadescription %}
+{{disease.description|truncatewords:155}}
+{% endblock %}
+
+{% block title %}
+질병 리스트
+{% endblock %}
+
+{% block content %}
+<div>
+  <h1> Disease List </h1>
+</div>
+<br>
+<br>
+<br>
+
+<div class="gallery-area section-padding40">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-6">
+        <div class="section-tittle mb-50">
+          <h2 style="font-size: 25;">Apple Disease Detection</h2>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-tittle mb-60">
+          <p style="font-size: 20px;">A deep learning approach to automatic apple disease detection based on Mask R-CNN
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      {% for disease in disease_list %}
+      <div class="col">
+        <div class="card" style="width: 18rem; height: auto;">
+          <a href="{% url 'te:detail' disease.slug %}"><img src="{{disease.image.url}}" class="card-img-top"
+              alt="{{disease.name}}"></a>
+          <div class="card-body">
+            <h5 class="card-title">{{disease.name}}</h5>
+            <a href="{% url 'te:detail' disease.slug %}" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+    {% endblock %}

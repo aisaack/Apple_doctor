@@ -1,0 +1,47 @@
+<!-- ---------------------------------------- [edit] ---------------------------------------- -->
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="{% block metadescription %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- te CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-image: url('../static/image/back/apple_BG3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-bottom: 60px;
+        }
+    </style>
+    <title>{% block title %} {% endblock %}</title>
+    
+</head>
+<body>  
+{% include "navbar.html" %}
+    
+    <div class="container"></div>
+        
+    <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+        {% block content %}
+        {% endblock %}
+        <!-- 기본 템플릿 안에 삽입될 내용 End -->
+    </div>
+
+<!-- jQuery JS -->
+<script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+{% block script %}
+        {% endblock %}
+</body>
+</html>
+<!-- ---------------------------------------------------------------------------------------- -->

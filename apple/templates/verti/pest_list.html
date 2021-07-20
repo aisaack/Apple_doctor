@@ -1,0 +1,55 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block metadescription %}
+{% endblock %}
+{% block content%}
+<br><br><br><br>
+
+
+<form action="" method='GET'>
+    <div class="row" style="margin-bottom:20px;">
+        <div class="col-lg-5">
+            <div class="input-group">
+                <input type="text" class="form-control" name="search_key" value="{{ search_key }}"
+                    placeholder="병해충 이름으로 검색..">
+                <span class="input-group-btn">
+                    <input class="btn btn-default" type="submit" value="Search">
+                </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+</form>
+<br>
+    <div>
+        <h5>농약 상세 정보는 농촌진흥청 농약정보 365에 등록된 내용이며, 
+            잠정안내사용기준 등 보다 자세한 정보는 사이트를 참조해 주시기 바랍니다.</h5>
+    </div>
+<br>
+<div class="container my-3">
+
+    <table class="table table-hover table-responsive">
+        <thead>
+            <th>품목명</th>
+            <th>제품명</th>
+            <th>제조사</th>
+            <th>적용병해충</th>
+            <th>사용적기 및 방법</th>
+            <th>안전사용시기</th>
+        </thead>
+        <tbody>
+            {% for pest in pest_list %}
+            <tr>
+                <td>{{pest.pestiKorName}}</td>
+                <td>{{pest.pestiBrandName}}</td>
+                <td>{{pest.compName}}</td>
+                <td>{{pest.diseaseWeedName}}</td>
+                <td>{{pest.pestiUse}}</td>
+                <td>{{pest.useSuittime}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<div>
+
+
+        {% endblock %}

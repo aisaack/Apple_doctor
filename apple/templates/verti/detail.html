@@ -1,0 +1,59 @@
+{% extends './base.html' %}
+{% load static %}
+{% block metadescription %}
+  {{disease.description|truncatewords:155}}
+{% endblock %}
+
+{% block title %}
+  {{disease.name}}
+{% endblock %}
+
+{% block content %}
+
+<section class="box features">
+  <h2 class="major"><span>{{disease.name}}</span></h2>
+  <div>
+      <div class="row">
+          <!-- <div class="col-9 col-12-medium"> -->
+              <!-- <div class="row"> -->
+                <img src="{{disease.image.url}}" alt="{{disease.name}}" style="margin-left: 30%;">
+                {{disease.img}}
+                  <!-- Featured Post -->
+                      <article class="box post" >
+                          <header>
+                            <div>
+                              <h3>발생 환경</h3>
+                              <p style="font-size: medium;">{{disease.description|linebreaks}}</p>
+                            </div>
+                              <br><br>
+                              <div>
+                                <h3>증상 설명</h3>
+                                <p style="font-size: medium;">{{disease.symptom|linebreaks}}</p>
+                            </div>
+                            <br><br>
+                            <div>
+                              <h3>방제 방법</h3>
+                              <p style="font-size: medium; font-family: 'Do Hyeon', sans-serif;">{{disease.pest|linebreaks}}</p>
+                          </div>
+                        </header>
+                                               
+                          <a href="../" class="button">뒤로</a>
+                      </article>
+
+              <!-- </div> -->
+          <!-- </div> -->
+          </div>
+      </div>
+  </section>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

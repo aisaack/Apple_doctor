@@ -1,0 +1,74 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block metadescription %}
+{% endblock %}
+{% block content%}
+<br><br><br><br>
+
+<h2>농약(사과) 리스트</h2>
+
+<div class="container my-3"></div>
+  <table class="table table-hover table-responsive">
+    <thead>
+      <th>품목명</th>
+      <th>제품명</th>
+      <th>제조사</th>
+      <th>적용병해충</th>
+      <th>사용적기 및 방법</th>
+      <th>안전사용시기</th>
+    </thead>
+    <tbody>
+    {% for pest in pest_list %}
+    <tr>
+      <td>{{pest.pestiKorName}}</td>
+      <td>{{pest.pestiBrandName}}</td>
+      <td>{{pest.compName}}</td>
+      <td>{{pest.diseaseWeedName}}</td>
+      <td>{{pest.pestiUse}}</td>
+      <td>{{pest.useSuittime}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+<!--페이징 시작-->
+
+  <ul class="pagination justify-content-center">
+    <!-- 이전페이지 -->
+    {%if pest_list.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ pest_list.previous_page_number}}">이전</a>
+    </li>
+    {% else %}
+    <li class="page=item disabled">
+      <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+    </li>
+    {% endif %}
+  <!-- 페이지리스트-->
+    {% for page_number in pest_list.paginator.page_range %}
+    {% if page_number >= pest_list.number|add:-5 and page_number <= pest_list.number|add:5 %}
+      {% if page_number == pest_list.number %}
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+      </li>
+      {% endif %}
+    {% endif %}
+    {% endfor %}
+  <!-- 다음페이지 -->
+    {% if pest_list.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ pest_list.next_page_number }}">다음</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+    </li>
+    {% endif %}
+  </ul>
+
+</div>
+{% endblock %}

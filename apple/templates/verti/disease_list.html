@@ -1,0 +1,53 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block metadescription %}
+  {{disease.description|truncatewords:155}}
+{% endblock %}
+{% block content%}
+
+<div class="col-12">
+
+    <!-- Features -->
+        <section class="box features">
+            <h2 class="major"><span>질병 목록</span></h2>
+            <br><br>
+            <div>
+                <div class="row">
+                        <!-- Feature -->
+                        {% for disease in disease_list %}
+                        <div class="col-3 col-6-medium col-12-small">
+                        <section class="box feature">
+                            <a class = "image featured" href= "{% url 'te:detail' disease.slug %}">
+                                <img src="{{disease.image.url}}" alt="{{disease.name}}" height=250 width= 30/></a>
+                            
+                                <h3>{{disease.name}}</h3>
+                                <a href="{% url 'te:detail' disease.slug %}" class="button">Details</a>
+                            
+                        </section>
+                        </div>
+                        {% endfor %}
+                            <!-- <section class="box feature">
+                                
+                                <a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                                <h3><a href="#">A Subheading</a></h3>
+                                <p>
+                                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+                                    lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                </p>
+                            </section> -->
+                   
+                  
+                    <!-- <div class="col-12">
+                        <ul class="actions">
+                            <li><a href="#" class="button large">Do Something</a></li>
+                            <li><a href="#" class="button alt large">Think About It</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            <br><br>
+        </section>
+
+</div>
+{% endblock %}
+    

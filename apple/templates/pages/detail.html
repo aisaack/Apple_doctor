@@ -1,0 +1,46 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block metadescription %}
+{{disease.description|truncatewords:155}}
+{% endblock %}
+
+{% block title %}
+{{disease.name}}
+{% endblock %}
+
+{% block content %}
+<br><br><br><br>
+
+<div class="container">
+  <p class="disease_title" style="font-family: 'Noto Sans KR', sans-serif;">
+  <h1><strong>{{disease.name}}</strong></h1>
+  </p>
+  <br><br>
+  <div>
+    <img src="{{disease.image.url}}" alt="{{disease.name}}">
+    {{disease.img}}
+  </div>
+  <br><br>
+  <div>
+    <h3>
+      <p style="font-family: 'Noto Sans KR', sans-serif;"><strong>발생 환경</strong></p>
+    </h3>
+    <h5><p>{{disease.description | linebreaks}}</p></h5>
+  </div>
+  <br><br>
+  <div>
+    <h3>
+      <p style="font-family: 'Noto Sans KR', sans-serif;"><strong>증상 설명</strong></p>
+    </h3>
+    <h5><p>{{disease.symptom | linebreaks}}</p></h5>
+  </div>
+  <br><br>
+  <div>
+    <h3>
+      <p style="font-family: 'Noto Sans KR', sans-serif;"><strong>방제 방법</strong></p>
+    </h3>
+    <h5><p>{{disease.pest | linebreaks}}</p></h5>
+  </div>
+
+</div>
+{% endblock %}

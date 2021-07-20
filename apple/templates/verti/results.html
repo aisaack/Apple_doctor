@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+
+<section class="box blog">
+    <h2 class="major"><span>Another Major Heading</span></h2>
+    <div>
+        <div class="row">
+            <div class="col-9 col-12-medium">
+                <div class="content">
+
+                    <!-- Featured Post -->
+                        <article class="box post">
+                            <header>
+                                <h3><a href="#">진단 결과</a></h3>
+                    
+                            </header>
+                            <!-- <img src={{resultDir}} alt="" > -->
+                            
+                            <a href="/" class="button">Top</a>
+                        </article>
+
+                </div>
+            </div>
+            <div class="col-3 col-12-medium">
+                <div class="sidebar">
+                    <!-- Archives -->
+                        <!-- <ul class="divided">
+                            {% for label,score in resultZip %}
+                            <article class="box post-summary">
+                                <h3>{{label}}</h3>
+                                <ul class="meta">
+                                    <h4>{{score}}%</h4>
+                                </ul>
+                            </article>
+                            {% endfor %}
+
+                        </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
