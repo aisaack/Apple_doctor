@@ -1,7 +1,7 @@
 # Apple doctor
 ![main](https://user-images.githubusercontent.com/65937735/126349732-11a8c620-de20-4bed-82de-296d23e8dbed.png)
 
-## Mask-RCNN 기반의 병해탐지 시스템
+## Mask-RCNN 기반의 병해탐지 서비스
 정확한 병해진단으로 농가를 돕고 더불어 농약의 오남용을 막을 수 있겠다는 취지로 시작했습니다.
 
 ## 1. 팀구성
