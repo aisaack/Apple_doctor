@@ -13,7 +13,7 @@
 * OS: Ubuntu 18.0.4 LTS
 * Deep learning: Tensorflow 1.15, Keras 2.3.1
 * Backend: Docker, Django, Sqlite
-* Frontend: Bootstrap, javascrip
+* Frontend: Bootstrap, javascript
 
 ## 3. 역할 
 * Collecting & labeling data
