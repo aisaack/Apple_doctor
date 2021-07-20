@@ -25,6 +25,6 @@
 ![diag_result](https://user-images.githubusercontent.com/65937735/126349928-f691355b-5969-4480-9b55-07d7f8381c65.png)
 ### 4-2. 병해정보 조회
 ![info](https://user-images.githubusercontent.com/65937735/126350015-9b1f4462-110b-421b-97a5-83214512e548.png)
-### 4-3. 농양사 찾기
+### 4-3. 농약사 찾기
 ![map](https://user-images.githubusercontent.com/65937735/126350042-c2a6fa94-b341-4fcc-8bc1-16b695e92a7c.png)
 
