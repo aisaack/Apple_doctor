@@ -158,3 +158,5 @@ cython_debug/
 ###
 .gz
 /apple/myLog.txt
+/openssl-1.1.1h
+/stunnel-5.57
